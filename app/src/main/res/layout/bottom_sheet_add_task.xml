@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_sheet"
+    android:clipToOutline="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="36dp">
+
+        <!-- Handle -->
+        <View
+            android:layout_width="36dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/chalk"
+            android:alpha="0.6" />
+
+        <!-- Título -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nueva tarea"
+                android:textColor="@color/ink"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Añade los detalles de tu tarea"
+                android:textColor="@color/ash"
+                android:textSize="13sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <!-- Campo título -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="12dp"
+            app:boxCornerRadiusTopStart="14dp"
+            app:boxCornerRadiusTopEnd="14dp"
+            app:boxCornerRadiusBottomStart="14dp"
+            app:boxCornerRadiusBottomEnd="14dp"
+            app:boxStrokeColor="@color/card_border"
+            app:boxBackgroundColor="@color/input_bg"
+            app:hintTextColor="@color/ash">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTaskTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="¿Qué tienes que hacer?"
+                android:inputType="textCapSentences"
+                android:textColor="@color/ink"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo asignatura -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            app:boxCornerRadiusTopStart="14dp"
+            app:boxCornerRadiusTopEnd="14dp"
+            app:boxCornerRadiusBottomStart="14dp"
+            app:boxCornerRadiusBottomEnd="14dp"
+            app:boxStrokeColor="@color/card_border"
+            app:boxBackgroundColor="@color/input_bg"
+            app:hintTextColor="@color/ash">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTaskSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Descripción (opcional)"
+                android:inputType="textCapSentences"
+                android:textColor="@color/ink"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Label fecha -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="8dp"
+            android:text="Fecha y hora límite (opcional)"
+            android:textColor="@color/ash"
+            android:textSize="12sp"
+            android:letterSpacing="0.02" />
+
+        <!-- Botones fecha + hora -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnDate"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/bg_duration_inactive"
+                android:paddingHorizontal="12dp"
+                android:text="📅 Fecha"
+                android:textColor="@color/ash"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/btnTime"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/bg_duration_inactive"
+                android:paddingHorizontal="12dp"
+                android:text="🕐 Hora"
+                android:textColor="@color/ash"
+                android:textSize="13sp"
+                android:enabled="false" />
+
+        </LinearLayout>
+
+        <!-- Fila recordatorio -->
+        <LinearLayout
+            android:id="@+id/rowReminder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_task_card"
+            android:padding="14dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchReminder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Recordatorio 2h antes"
+                android:textColor="@color/ink"
+                android:textSize="14sp"
+                app:thumbTint="@color/mint"
+                app:trackTint="@color/chalk" />
+
+            <TextView
+                android:id="@+id/tvReminderInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/ash"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Switches (urgente + diaria + objetivo) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_task_card"
+            android:padding="14dp"
+            android:orientation="vertical">
+
+            <!-- Urgente -->
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchUrgent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="⚡ Marcar como urgente"
+                android:textColor="@color/ink"
+                android:textSize="15sp"
+                app:thumbTint="@color/switch_thumb_urgent"
+                app:trackTint="@color/switch_track_urgent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/chalk"
+                android:alpha="0.5" />
+
+            <!-- Diaria -->
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchDaily"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="🔁 Tarea diaria"
+                android:textColor="@color/ink"
+                android:textSize="15sp"
+                app:thumbTint="@color/switch_thumb_daily"
+                app:trackTint="@color/switch_track_daily" />
+
+            <TextView
+                android:id="@+id/tvDailyHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="4dp"
+                android:text="Se reiniciará cada día"
+                android:textColor="@color/ash"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:background="@color/chalk"
+                android:alpha="0.5" />
+
+            <!-- Objetivo del día -->
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchObjective"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="🎯 Marcar como objetivo del día"
+                android:textColor="@color/ink"
+                android:textSize="15sp"
+                app:thumbTint="@color/switch_thumb_objective"
+                app:trackTint="@color/switch_track_objective" />
+
+            <TextView
+                android:id="@+id/tvObjectiveHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="4dp"
+                android:text="Contará para tu racha si completas 3 objetivos"
+                android:textColor="@color/ash"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Botón Añadir -->
+        <Button
+            android:id="@+id/btnAddTask"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="20dp"
+            android:enabled="false"
+            android:text="Añadir tarea"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/amber" />
+
+    </LinearLayout>
+
+</ScrollView>

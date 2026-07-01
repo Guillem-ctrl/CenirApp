@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Paleta Cenir -->
+    <color name="ink">#1A1A2E</color>
+    <color name="ash">#9E9E9E</color>
+    <color name="chalk">#E0E0E0</color>
+    <color name="mint">#2ECC71</color>
+    <color name="mint_light">#E8F8F0</color>
+    <color name="mint_dark">#4A8C6A</color>
+    <color name="amber">#F39C12</color>
+    <color name="amber_light">#FEF3DC</color>
+    <color name="objective">#3B82F6</color>       <!-- azul principal -->
+    <color name="objective_light">#BFDBFE</color>  <!-- azul muy suave para fondo de card -->
+    <color name="paper">#F5F6FA</color>
+    <color name="overdue">#E05252</color>
+
+    <!-- UI moderna -->
+    <color name="card_bg">#FFFFFFFF</color>
+    <color name="card_border">#1A1A1A14</color>
+    <color name="chip_inactive_bg">#F0F0F5</color>
+    <color name="input_bg">#FAFAFA</color>
+    <color name="sheet_bg">#FFFFFFFF</color>
+    <color name="graphite">#555567</color>
+
+</resources>

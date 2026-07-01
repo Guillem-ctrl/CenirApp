@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/theme_light"
+        android:title="Modo claro" />
+    <item
+        android:id="@+id/theme_dark"
+        android:title="Modo oscuro" />
+    <item
+        android:id="@+id/theme_system"
+        android:title="Según el sistema" />
+</menu>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvSectionHeader"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="10dp"
+    android:text="COMPLETADAS"
+    android:textAllCaps="true"
+    android:textColor="@color/ash"
+    android:textSize="11sp"
+    android:letterSpacing="0.1" />

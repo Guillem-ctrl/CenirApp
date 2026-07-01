@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="16dp">
+
+    <!-- Handle -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
+        android:background="#30808080"
+        android:backgroundTint="@null" />
+
+    <!-- Título del sheet -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp"
+        android:text="Opciones"
+        android:textColor="@color/ink"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- ── SECCIÓN: APARIENCIA ──────────────────────────── -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"
+        android:paddingBottom="4dp"
+        android:text="APARIENCIA"
+        android:textColor="@color/ash"
+        android:textSize="10sp"
+        android:letterSpacing="0.15"
+        android:textAllCaps="true" />
+
+    <!-- Modo claro -->
+    <LinearLayout
+        android:id="@+id/optionLight"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="24dp"
+        android:background="?attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_sun"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:id="@+id/tvLight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Modo claro"
+            android:textColor="@color/ink"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/checkLight"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/bg_circle_filled"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- Modo oscuro -->
+    <LinearLayout
+        android:id="@+id/optionDark"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="24dp"
+        android:background="?attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_moon"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:id="@+id/tvDark"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Modo oscuro"
+            android:textColor="@color/ink"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/checkDark"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/bg_circle_filled"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- Según el sistema -->
+    <LinearLayout
+        android:id="@+id/optionSystem"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="24dp"
+        android:background="?attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_phone"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:id="@+id/tvSystem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Según el sistema"
+            android:textColor="@color/ink"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/checkSystem"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/bg_circle_filled"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- Separador -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/card_border" />
+
+    <!-- ── SECCIÓN: NOTIFICACIONES ────────────────────────── -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"
+        android:paddingBottom="4dp"
+        android:text="NOTIFICACIONES"
+        android:textColor="@color/ash"
+        android:textSize="10sp"
+        android:letterSpacing="0.15"
+        android:textAllCaps="true" />
+
+    <!-- Recordatorios de tareas -->
+    <LinearLayout
+        android:id="@+id/optionNotifications"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="24dp"
+        android:background="?attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_bell"
+            android:layout_marginEnd="16dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recordatorios de tareas"
+                android:textColor="@color/ink"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aviso 2h antes de la fecha límite"
+                android:textColor="@color/ash"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchNotifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:theme="@style/SwitchAmber" />
+    </LinearLayout>
+
+    <!-- Separador -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/card_border" />
+
+    <!-- ── SECCIÓN: DATOS ─────────────────────────────────── -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"
+        android:paddingBottom="4dp"
+        android:text="DATOS"
+        android:textColor="@color/ash"
+        android:textSize="10sp"
+        android:letterSpacing="0.15"
+        android:textAllCaps="true" />
+
+    <!-- Borrar tareas completadas -->
+    <LinearLayout
+        android:id="@+id/optionClearCompleted"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="24dp"
+        android:background="?attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_trash"
+            android:layout_marginEnd="16dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Borrar tareas completadas"
+                android:textColor="@color/overdue"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Elimina todas las marcadas como hechas"
+                android:textColor="@color/ash"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Separador -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/card_border" />
+
+    <!-- ── SECCIÓN: INFORMACIÓN ───────────────────────────── -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"
+        android:paddingBottom="4dp"
+        android:text="INFORMACIÓN"
+        android:textColor="@color/ash"
+        android:textSize="10sp"
+        android:letterSpacing="0.15"
+        android:textAllCaps="true" />
+
+    <!-- Versión de la app -->
+    <LinearLayout
+        android:id="@+id/optionAbout"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="24dp"
+        android:background="?attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_info"
+            android:layout_marginEnd="16dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sobre Cenir"
+                android:textColor="@color/ink"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvAppVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Versión 1.0"
+                android:textColor="@color/ash"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

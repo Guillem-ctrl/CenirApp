@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ink">#E8E8F0</color>
+    <color name="ash">#7A7A9A</color>
+    <color name="chalk">#2C2C3E</color>
+    <color name="mint">#2ECC71</color>
+    <color name="mint_light">#1A3329</color>
+    <color name="mint_dark">#4A8C6A</color>
+    <color name="amber">#F39C12</color>
+    <color name="amber_light">#3A2E10</color>
+    <color name="paper">#0D0D1A</color>
+    <color name="overdue">#E05252</color>
+    <color name="white">#1E1E30</color>
+
+    <!-- Objetivo dark mode -->
+    <color name="objective">#60A5FA</color>        <!-- azul más claro para que sea visible en oscuro -->
+    <color name="objective_light">#1A2A4A</color>  <!-- azul oscuro profundo para el fondo de card -->
+
+    <!-- UI moderna dark — bordes y fondos neutrales SIN tinte verde -->
+    <color name="card_bg">#1E1E2E</color>
+    <color name="card_border">#2A2A40</color>
+    <color name="chip_inactive_bg">#252535</color>
+    <color name="input_bg">#18182A</color>
+    <color name="sheet_bg">#1E1E2E</color>
+    <color name="graphite">#9090B0</color>
+</resources>

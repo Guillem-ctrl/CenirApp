@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@android:drawable/ic_menu_today"
+        android:title="Inicio" />
+
+    <item
+        android:id="@+id/nav_focus"
+        android:icon="@android:drawable/ic_menu_compass"
+        android:title="Foco" />
+
+    <item
+        android:id="@+id/nav_tasks"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="Tareas" />
+
+    <item
+        android:id="@+id/nav_stats"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:title="Estadísticas" />
+
+    <item
+        android:id="@+id/nav_achievements"
+        android:icon="@drawable/ic_trophy"
+        android:title="Logros" />
+
+</menu>

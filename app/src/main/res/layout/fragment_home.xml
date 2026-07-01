@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/paper">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingBottom="88dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ══ CABECERA ════════════════════════════════════════════ -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gradient_header"
+                android:paddingTop="56dp"
+                android:paddingBottom="28dp"
+                android:paddingHorizontal="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CENIR"
+                            android:textColor="#80FFFFFF"
+                            android:textSize="10sp"
+                            android:letterSpacing="0.3"
+                            android:textAllCaps="true" />
+
+                        <TextView
+                            android:id="@+id/tvGreeting"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hola 👋"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="26sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:id="@+id/btnThemeOptions"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/bg_glass_card"
+                        android:contentDescription="Opciones"
+                        android:src="@drawable/ic_more_vert"
+                        android:tint="#CCFFFFFF"
+                        android:padding="10dp" />
+
+                </RelativeLayout>
+
+            </FrameLayout>
+
+            <!-- ══ CONTENIDO ══════════════════════════════════════════ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="20dp">
+
+                <!-- ══ CARD NIVEL + OBJETIVOS + RACHA ═════════════════ -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginBottom="12dp"
+                    app:cardBackgroundColor="#FF1A1A2E"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="18dp">
+
+                        <!-- Fila: NIVEL / XP -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvLevelLabel"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="NIVEL 1"
+                                android:textColor="#F39C12"
+                                android:textSize="11sp"
+                                android:textStyle="bold"
+                                android:letterSpacing="0.1"
+                                android:textAllCaps="true" />
+
+                            <TextView
+                                android:id="@+id/tvTotalXp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0 XP"
+                                android:textColor="#9E9E9E"
+                                android:textSize="11sp" />
+
+                        </LinearLayout>
+
+                        <!-- Nombre nivel -->
+                        <TextView
+                            android:id="@+id/tvLevelName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Aprendiz"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <!-- Barra XP -->
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/pbXp"
+                            android:layout_width="match_parent"
+                            android:layout_height="6dp"
+                            android:layout_marginTop="10dp"
+                            android:progress="0"
+                            android:max="100"
+                            app:trackColor="#33FFFFFF"
+                            app:indicatorColor="#F39C12"
+                            app:trackCornerRadius="3dp"
+                            app:trackThickness="6dp" />
+
+                        <!-- XP actual / necesario -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="6dp">
+
+                            <TextView
+                                android:id="@+id/tvXpCurrent"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0 XP"
+                                android:textColor="#9E9E9E"
+                                android:textSize="10sp" />
+
+                            <TextView
+                                android:id="@+id/tvXpNeeded"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="/ 100 XP para nivel 2"
+                                android:textColor="#9E9E9E"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+                        <!-- SEPARADOR 1 -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginBottom="14dp"
+                            android:background="#1AFFFFFF" />
+
+
+                        <!-- ══ SECCIÓN OBJETIVOS ══════════════════════════════════ -->
+                        <LinearLayout
+                            android:id="@+id/sectionObjectives"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginBottom="8dp"
+                                android:text="🎯 OBJETIVOS"
+                                android:textAllCaps="true"
+                                android:textColor="@color/objective"
+                                android:textSize="11sp"
+                                android:letterSpacing="0.1" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvObjectives"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clipToPadding="false"
+                                android:nestedScrollingEnabled="false"
+                                android:paddingBottom="4dp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/dividerObjectives"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginVertical="12dp"
+                            android:background="@color/chalk"
+                            android:visibility="gone" />
+
+                        <!-- ══ OBJETIVOS DE HOY ══ -->
+                        <!-- Fila: etiqueta + contador + botón gestionar -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="10dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="🎯 OBJETIVOS HOY"
+                                android:textColor="#9E9E9E"
+                                android:textSize="10sp"
+                                android:textAllCaps="true"
+                                android:letterSpacing="0.05" />
+
+                            <TextView
+                                android:id="@+id/tvObjectivesCounter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0/3"
+                                android:textColor="#F39C12"
+                                android:textSize="11sp"
+                                android:textStyle="bold"
+                                android:layout_marginEnd="10dp" />
+
+                            <!-- Botón para seleccionar objetivos -->
+                            <TextView
+                                android:id="@+id/btnManageObjectives"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Gestionar"
+                                android:textColor="#F39C12"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="4dp"
+                                android:background="@drawable/bg_duration_inactive" />
+
+                        </LinearLayout>
+
+                        <!-- Círculos de objetivos (máx 5) -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="8dp">
+
+                            <View android:id="@+id/circleObj1"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginEnd="6dp"
+                                android:background="@drawable/bg_obj_circle_empty" />
+                            <View android:id="@+id/circleObj2"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginEnd="6dp"
+                                android:background="@drawable/bg_obj_circle_empty" />
+                            <View android:id="@+id/circleObj3"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginEnd="6dp"
+                                android:background="@drawable/bg_obj_circle_empty" />
+                            <View android:id="@+id/circleObj4"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginEnd="6dp"
+                                android:background="@drawable/bg_obj_circle_empty" />
+                            <View android:id="@+id/circleObj5"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/bg_obj_circle_empty" />
+
+                        </LinearLayout>
+
+                        <!-- Estado textual de objetivos -->
+                        <TextView
+                            android:id="@+id/tvObjectivesStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Marca tareas como objetivo para activar la racha"
+                            android:textColor="#59FFFFFF"
+                            android:textSize="10sp" />
+
+                        <!-- SEPARADOR 2 -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginBottom="14dp"
+                            android:background="#1AFFFFFF" />
+
+                        <!-- ══ RACHA ══ -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="8dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="🔥 RACHA ACTIVA"
+                                android:textColor="#9E9E9E"
+                                android:textSize="10sp"
+                                android:textAllCaps="true"
+                                android:letterSpacing="0.05" />
+
+                            <TextView
+                                android:id="@+id/tvStreakCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="#F39C12"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="días"
+                                android:textColor="#9E9E9E"
+                                android:textSize="11sp" />
+
+                        </LinearLayout>
+
+                        <!-- Barras últimos 7 días -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="start"
+                            android:layout_marginBottom="4dp">
+
+                            <View android:id="@+id/barDay1"
+                                android:layout_width="8dp" android:layout_height="24dp"
+                                android:layout_marginEnd="4dp"
+                                android:background="@drawable/bg_streak_bar_inactive" />
+                            <View android:id="@+id/barDay2"
+                                android:layout_width="8dp" android:layout_height="24dp"
+                                android:layout_marginEnd="4dp"
+                                android:background="@drawable/bg_streak_bar_inactive" />
+                            <View android:id="@+id/barDay3"
+                                android:layout_width="8dp" android:layout_height="24dp"
+                                android:layout_marginEnd="4dp"
+                                android:background="@drawable/bg_streak_bar_inactive" />
+                            <View android:id="@+id/barDay4"
+                                android:layout_width="8dp" android:layout_height="24dp"
+                                android:layout_marginEnd="4dp"
+                                android:background="@drawable/bg_streak_bar_inactive" />
+                            <View android:id="@+id/barDay5"
+                                android:layout_width="8dp" android:layout_height="24dp"
+                                android:layout_marginEnd="4dp"
+                                android:background="@drawable/bg_streak_bar_inactive" />
+                            <View android:id="@+id/barDay6"
+                                android:layout_width="8dp" android:layout_height="24dp"
+                                android:layout_marginEnd="4dp"
+                                android:background="@drawable/bg_streak_bar_inactive" />
+                            <View android:id="@+id/barDay7"
+                                android:layout_width="8dp" android:layout_height="24dp"
+                                android:background="@drawable/bg_streak_bar_inactive" />
+
+                        </LinearLayout>
+
+                        <!-- Etiquetas días semana -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="start">
+
+                            <TextView android:id="@+id/tvBarLabel1"
+                                android:layout_width="8dp" android:layout_height="wrap_content"
+                                android:layout_marginEnd="4dp" android:textColor="#40FFFFFF"
+                                android:textSize="8sp" android:gravity="center" android:text="L" />
+                            <TextView android:id="@+id/tvBarLabel2"
+                                android:layout_width="8dp" android:layout_height="wrap_content"
+                                android:layout_marginEnd="4dp" android:textColor="#40FFFFFF"
+                                android:textSize="8sp" android:gravity="center" android:text="M" />
+                            <TextView android:id="@+id/tvBarLabel3"
+                                android:layout_width="8dp" android:layout_height="wrap_content"
+                                android:layout_marginEnd="4dp" android:textColor="#40FFFFFF"
+                                android:textSize="8sp" android:gravity="center" android:text="X" />
+                            <TextView android:id="@+id/tvBarLabel4"
+                                android:layout_width="8dp" android:layout_height="wrap_content"
+                                android:layout_marginEnd="4dp" android:textColor="#40FFFFFF"
+                                android:textSize="8sp" android:gravity="center" android:text="J" />
+                            <TextView android:id="@+id/tvBarLabel5"
+                                android:layout_width="8dp" android:layout_height="wrap_content"
+                                android:layout_marginEnd="4dp" android:textColor="#40FFFFFF"
+                                android:textSize="8sp" android:gravity="center" android:text="V" />
+                            <TextView android:id="@+id/tvBarLabel6"
+                                android:layout_width="8dp" android:layout_height="wrap_content"
+                                android:layout_marginEnd="4dp" android:textColor="#40FFFFFF"
+                                android:textSize="8sp" android:gravity="center" android:text="S" />
+                            <TextView android:id="@+id/tvBarLabel7"
+                                android:layout_width="8dp" android:layout_height="wrap_content"
+                                android:textColor="#40FFFFFF" android:textSize="8sp"
+                                android:gravity="center" android:text="D" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- ══ CARD MISIONES ═══════════════════════════════════ -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardMissions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="#FFFFFFFF"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#E0E0E0"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="12dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Misiones de hoy"
+                                android:textColor="#1A1A2E"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="✨ bonus XP"
+                                android:textColor="#F39C12"
+                                android:textSize="11sp" />
+
+                        </LinearLayout>
+
+                        <!-- Misión 1 -->
+                        <LinearLayout
+                            android:id="@+id/rowMission1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginBottom="4dp">
+
+                                <TextView
+                                    android:id="@+id/tvMission1Title"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Completa 3 tareas"
+                                    android:textColor="#1A1A2E"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/tvMission1Progress"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0/3"
+                                    android:textColor="#9E9E9E"
+                                    android:textSize="11sp" />
+
+                            </LinearLayout>
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/pbMission1"
+                                android:layout_width="match_parent"
+                                android:layout_height="4dp"
+                                android:progress="0"
+                                android:max="100"
+                                app:trackColor="#E0E0E0"
+                                app:indicatorColor="#F39C12"
+                                app:trackCornerRadius="2dp"
+                                app:trackThickness="4dp" />
+
+                            <TextView
+                                android:id="@+id/tvMission1Done"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="✅ +25 XP"
+                                android:textColor="#2ECC71"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="12dp"
+                            android:background="#E0E0E0" />
+
+                        <!-- Misión 2 -->
+                        <LinearLayout
+                            android:id="@+id/rowMission2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginBottom="4dp">
+
+                                <TextView
+                                    android:id="@+id/tvMission2Title"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Finaliza 2 sesiones de foco"
+                                    android:textColor="#1A1A2E"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/tvMission2Progress"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0/2"
+                                    android:textColor="#9E9E9E"
+                                    android:textSize="11sp" />
+
+                            </LinearLayout>
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/pbMission2"
+                                android:layout_width="match_parent"
+                                android:layout_height="4dp"
+                                android:progress="0"
+                                android:max="100"
+                                app:trackColor="#E0E0E0"
+                                app:indicatorColor="#F39C12"
+                                app:trackCornerRadius="2dp"
+                                app:trackThickness="4dp" />
+
+                            <TextView
+                                android:id="@+id/tvMission2Done"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="✅ +25 XP"
+                                android:textColor="#2ECC71"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- ══ SECCIÓN VENCIDAS ════════════════════════════════ -->
+                <LinearLayout
+                    android:id="@+id/sectionOverdue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="⚠️ VENCIDAS"
+                        android:textAllCaps="true"
+                        android:textColor="@color/overdue"
+                        android:textSize="11sp"
+                        android:letterSpacing="0.1" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvOverdue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:nestedScrollingEnabled="false"
+                        android:paddingBottom="4dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/dividerOverdue"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="12dp"
+                    android:background="@color/chalk"
+                    android:visibility="gone" />
+
+                <!-- ══ SECCIÓN DIARIAS ═════════════════════════════════ -->
+                <LinearLayout
+                    android:id="@+id/sectionDaily"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="🔁 RUTINA DIARIA"
+                        android:textAllCaps="true"
+                        android:textColor="@color/ash"
+                        android:textSize="11sp"
+                        android:letterSpacing="0.1" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvDaily"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:nestedScrollingEnabled="false"
+                        android:paddingBottom="4dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/dividerSections"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="12dp"
+                    android:background="@color/chalk"
+                    android:visibility="gone" />
+
+                <!-- ══ SECCIÓN HOY ══════════════════════════════════════ -->
+                <TextView
+                    android:id="@+id/tvLabelToday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="📋 PENDIENTE HOY"
+                    android:textAllCaps="true"
+                    android:textColor="@color/ash"
+                    android:textSize="11sp"
+                    android:letterSpacing="0.1" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTasks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingBottom="8dp" />
+
+                <!-- ══ PRÓXIMOS DÍAS ═══════════════════════════════════ -->
+                <LinearLayout
+                    android:id="@+id/sectionUpcoming"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@color/chalk" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="📅 PRÓXIMOS DÍAS"
+                        android:textAllCaps="true"
+                        android:textColor="@color/ash"
+                        android:textSize="11sp"
+                        android:letterSpacing="0.1" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvUpcoming"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:nestedScrollingEnabled="false"
+                        android:paddingBottom="8dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="20dp"
+        android:contentDescription="Añadir tarea"
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="@color/amber"
+        app:tint="@color/white"
+        app:elevation="8dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

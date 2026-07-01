@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.CenirApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/amber</item>
+        <item name="colorPrimaryVariant">@color/ink</item>
+        <item name="colorOnPrimary">@color/ink</item>
+        <item name="android:windowBackground">@color/paper</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/ink</item>
+    </style>
+</resources>

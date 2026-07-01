@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.CenirApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/amber</item>
+        <item name="colorPrimaryVariant">@color/ink</item>
+        <item name="colorOnPrimary">@color/ink</item>
+        <item name="android:windowBackground">@color/paper</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/ink</item>
+    </style>
+
+    <!-- BottomSheet con esquinas redondeadas y scrim suave -->
+    <style name="RoundedBottomSheet" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/RoundedBottomSheetStyle</item>
+        <item name="android:backgroundDimAmount">0.3</item>
+        <item name="colorSurface">@color/card_bg</item>
+    </style>
+
+    <style name="RoundedBottomSheetStyle" parent="Widget.MaterialComponents.BottomSheet.Modal">
+        <item name="shapeAppearanceOverlay">@style/RoundedBottomSheetShape</item>
+        <item name="backgroundTint">@color/card_bg</item>
+    </style>
+
+    <style name="RoundedBottomSheetShape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">20dp</item>
+        <item name="cornerSizeTopRight">20dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <!-- Switch con color amber -->
+    <style name="SwitchAmber" parent="Theme.MaterialComponents.DayNight">
+        <item name="colorPrimary">@color/amber</item>
+        <item name="colorPrimaryVariant">@color/amber</item>
+        <item name="colorControlActivated">@color/amber</item>
+    </style>
+</resources>
