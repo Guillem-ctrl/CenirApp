@@ -17,3 +17,6 @@ local.properties
 # OS files
 .DS_Store
 Thumbs.db
+
+# Release builds 
+app/release/
