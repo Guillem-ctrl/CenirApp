@@ -1,81 +1,189 @@
+
+<p align="center">
+  <img src="assets/banner.png" alt="CenirApp Banner" width="100%">
+</p>
+
+
 # CenirApp
 
-CenirApp és una aplicació Android de productivitat gamificada dissenyada per ajudar els usuaris a millorar els seus hàbits d’estudi, concentració i organització mitjançant un sistema de recompenses, nivells i rutes diàries.
+A modern Android productivity application that combines task management with gamification to encourage consistency, focus and daily progress.
+
+CenirApp transforms productivity into an engaging experience by rewarding users with experience points, levels, achievements and daily missions while helping them organize their study and work sessions.
 
 ---
 
-## Funcionalitats principals
+## Overview
 
-- Gestió completa de tasques amb categories i filtres  
-- Mode focus tipus Pomodoro per millorar la concentració  
-- Sistema de gamificació amb XP, nivells i assoliments  
-- Rutes diàries (streaks) per fomentar la constància  
-- Estadístiques d’activitat i progrés  
-- Sistema d’assoliments desbloquejables  
+CenirApp was developed as a personal project to explore modern Android development using Kotlin and the MVVM architecture.
 
----
+The application focuses on three main areas:
 
-## Sistema de gamificació
+* Task management
+* Focus sessions (Pomodoro)
+* Gamification
 
-L’aplicació converteix la productivitat en una experiència motivadora:
-
-- XP per tasques completades i sessions de focus  
-- Sistema de nivells amb progressió  
-- Rutes diàries basades en objectius complerts  
-- Missions automàtiques diàries  
-- Assoliments amb diferents condicions  
+All user data is stored locally using Room, while background tasks and reminders are managed with WorkManager.
 
 ---
 
-## Arquitectura
+## Screenshots
 
-El projecte segueix una arquitectura MVVM (Model-View-ViewModel):
+### Home Dashboard
 
-- Model: Room Database (SQLite)  
-- ViewModel: Lògica de negoci i estat de la UI  
-- View: Fragments i interfície d’usuari  
+![Home](assets/screenshots/home.jpeg)
 
-També s’utilitzen:
+### Task Management
 
-- Room per persistència local  
-- LiveData i Flow per observació reactiva  
-- WorkManager per tasques en segon pla  
+![Tasks](assets/screenshots/tasks.jpeg)
 
----
+### Focus Timer
 
-## Funcionalitats en segon pla
+![Focus](assets/screenshots/focus.jpeg)
 
-- Notificacions diàries automàtiques  
-- Recordatoris de tasques  
-- Reinici de missions i rutes  
-- Alertes de rutes en perill  
+### Statistics
 
----
+![Statistics](assets/screenshots/statistics.jpeg)
 
-## Tecnologies utilitzades
+### Achievements
 
-- Kotlin  
-- Android SDK  
-- MVVM  
-- Room (SQLite)  
-- LiveData / Flow  
-- WorkManager  
-- Material Design  
+![Achievements](assets/screenshots/achievements.jpeg)
 
 ---
 
-## Objectiu del projecte
+## Features
 
-Aquest projecte ha estat creat com a exercici personal per aprendre desenvolupament Android modern, arquitectura de software i creació d’aplicacions reals amb sistemes complexos de dades i lògica.
+### Productivity
+
+* Create and manage tasks
+* Daily objectives
+* Daily recurring tasks
+* Due dates and reminders
+* Task filtering
+* Priority management
+
+### Focus Mode
+
+* Customizable Pomodoro timer
+* Focus session tracking
+* Circular animated timer
+* Session rewards
+* Custom session duration
+
+### Gamification
+
+* Experience (XP) system
+* Level progression
+* Daily missions
+* Achievement system
+* Daily streaks
+* Progress tracking
+
+### Statistics
+
+* Daily completed tasks
+* Weekly activity
+* Total completed tasks
+* Current streak
+* User progression
+
+### Notifications
+
+* Daily mission reminders
+* Task reminders
+* Streak notifications
+* Focus session completion
+* Automatic daily reset
 
 ---
 
-## Estat
+## Technology Stack
 
-Projecte funcional en desenvolupament actiu.
+| Category         | Technology                |
+| ---------------- | ------------------------- |
+| Language         | Kotlin                    |
+| Architecture     | MVVM                      |
+| Database         | Room (SQLite)             |
+| UI               | XML + Material Components |
+| Background Tasks | WorkManager               |
+| Reactive Data    | LiveData & Flow           |
+| Concurrency      | Kotlin Coroutines         |
+| IDE              | Android Studio            |
 
 ---
 
-## Autor
+## Architecture
 
-Desenvolupat per Guillem
+The project follows the MVVM (Model–View–ViewModel) architecture to separate business logic from the user interface.
+
+```text
+Presentation
+│
+├── Activities
+├── Fragments
+└── ViewModels
+        │
+        ▼
+Business Logic
+│
+├── Gamification Manager
+├── Level System
+└── Daily Missions
+        │
+        ▼
+Data Layer
+│
+├── Room Database
+├── DAO
+└── Entities
+```
+
+---
+
+## Key Components
+
+* Room Database
+* ViewModels
+* LiveData
+* Kotlin Flow
+* WorkManager
+* Custom Timer View
+* Material Design Components
+
+---
+
+## Future Improvements
+
+* Cloud synchronization
+* User authentication
+* Task editing
+* DataStore preferences
+* Dependency Injection (Hilt)
+* Jetpack Navigation
+* Jetpack Compose migration
+* Unit testing
+* Accessibility improvements
+* Multi-language support
+
+---
+
+## Learning Objectives
+
+This project was developed to strengthen my knowledge of:
+
+* Android application development
+* Software architecture
+* Local data persistence
+* Background processing
+* UI/UX design
+* Clean code principles
+* Kotlin best practices
+
+---
+
+## Author
+
+**Guillem Clua**
+
+Software Developer Student
+
+GitHub: https://github.com/Guillem-ctrl
