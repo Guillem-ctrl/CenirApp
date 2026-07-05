@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="assets/banner.png" alt="CenirApp Banner" width="100%">
+  <img src="assets/screenshots/banner.png" alt="CenirApp Banner" width="100%">
 </p>
 
 
@@ -28,26 +28,19 @@ All user data is stored locally using Room, while background tasks and reminders
 
 ## Screenshots
 
-### Home Dashboard
+<p align="center">
+  <img src="assets/screenshots/home.jpeg" width="280">
+  <img src="assets/screenshots/tasks.jpeg" width="280">
+</p>
 
-![Home](assets/screenshots/home.jpeg)
+<p align="center">
+  <img src="assets/screenshots/focus.jpeg" width="280">
+  <img src="assets/screenshots/statistics.jpeg" width="280">
+</p>
 
-### Task Management
-
-![Tasks](assets/screenshots/tasks.jpeg)
-
-### Focus Timer
-
-![Focus](assets/screenshots/focus.jpeg)
-
-### Statistics
-
-![Statistics](assets/screenshots/statistics.jpeg)
-
-### Achievements
-
-![Achievements](assets/screenshots/achievements.jpeg)
-
+<p align="center">
+  <img src="assets/screenshots/achievements.jpeg" width="280">
+</p>
 ---
 
 ## Features
